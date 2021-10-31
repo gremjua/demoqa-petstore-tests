@@ -1,0 +1,24 @@
+{
+  "name": "demoqa-petstore-tests",
+  "version": "1.0.0",
+  "description": "DemoQa and PetStore Automated Tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gremjua/demoqa-petstore-tests.git"
+  },
+  "keywords": [
+    "cypress",
+    "typescript",
+    "testing"
+  ],
+  "author": "gremjua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gremjua/demoqa-petstore-tests/issues"
+  },
+  "homepage": "https://github.com/gremjua/demoqa-petstore-tests#readme"
+}
