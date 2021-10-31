@@ -1,218 +1,227 @@
 module.exports = {
-    env: {
-        browser: true,
-        commonjs: true,
-        'cypress/globals': true,
-        es6: true,
-        node: true,
-    },
-    extends: [
-        'airbnb-base',
-        'eslint-config-prettier',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'prettier',
-        'plugin:cypress/recommended',
-        'eslint:recommended',
-        'plugin:prettier/recommended',
-        'plugin:import/typescript',
-        'plugin:jsdoc/recommended',
+  env: {
+    browser: true,
+    commonjs: true,
+    "cypress/globals": true,
+    es6: true,
+    node: true,
+  },
+  extends: [
+    "airbnb-base",
+    "eslint-config-prettier",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier",
+    "plugin:cypress/recommended",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:jsdoc/recommended",
+  ],
+  globals: {
+    BUILD_PATH: false,
+
+    cy: true,
+    // these are things injected using webpack define plugin
+    process: false,
+  },
+  ignorePatterns: ["node_modules/", "docs"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: 11,
+    project: "./tsconfig.json",
+    sourceType: "module",
+    tsconfigRootDir: __dirname,
+  },
+  plugins: [
+    "@typescript-eslint",
+    "cypress",
+    "import",
+    "prettier",
+    "sort-keys-fix",
+  ],
+  rules: {
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-types": "warn",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "warn",
+
+    "@typescript-eslint/interface-name-prefix": "off",
+
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      { format: ["PascalCase"], selector: "class" },
     ],
-    globals: {
-        BUILD_PATH: false,
+    "@typescript-eslint/no-empty-interface": "warn",
 
-        cy: true,
-        // these are things injected using webpack define plugin
-        process: false,
-    },
-    ignorePatterns: ['node_modules/', 'docs'],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        ecmaVersion: 11,
-        project: './tsconfig.json',
-        sourceType: 'module',
-        tsconfigRootDir: __dirname,
-    },
-    plugins: ['@typescript-eslint', 'cypress', 'import', 'prettier', 'sort-keys-fix'],
-    rules: {
-        '@typescript-eslint/ban-ts-ignore': 'off',
-        '@typescript-eslint/ban-types': 'warn',
-        '@typescript-eslint/camelcase': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'warn',
+    "@typescript-eslint/no-explicit-any": "warn",
 
-        '@typescript-eslint/interface-name-prefix': 'off',
+    "@typescript-eslint/no-for-in-array": "error",
 
-        '@typescript-eslint/naming-convention': ['warn', { format: ['PascalCase'], selector: 'class' }],
-        '@typescript-eslint/no-empty-interface': 'warn',
+    "@typescript-eslint/no-inferrable-types": "off",
 
-        '@typescript-eslint/no-explicit-any': 'warn',
+    "@typescript-eslint/no-misused-promises": "warn",
 
-        '@typescript-eslint/no-for-in-array': 'error',
+    "@typescript-eslint/no-namespace": "warn",
 
-        '@typescript-eslint/no-inferrable-types': 'off',
+    "@typescript-eslint/no-non-null-assertion": "warn",
 
-        '@typescript-eslint/no-misused-promises': 'warn',
+    "@typescript-eslint/no-unnecessary-type-assertion": "error",
 
-        '@typescript-eslint/no-namespace': 'warn',
+    "@typescript-eslint/no-unsafe-assignment": "warn",
 
-        '@typescript-eslint/no-non-null-assertion': 'warn',
+    "@typescript-eslint/no-unsafe-call": "warn",
 
-        '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+    "@typescript-eslint/no-unsafe-member-access": "warn",
 
-        '@typescript-eslint/no-unsafe-assignment': 'warn',
+    "@typescript-eslint/no-unsafe-return": "warn",
 
-        '@typescript-eslint/no-unsafe-call': 'warn',
+    "@typescript-eslint/no-unused-expressions": "error",
 
-        '@typescript-eslint/no-unsafe-member-access': 'warn',
+    "@typescript-eslint/no-unused-vars": "error",
 
-        '@typescript-eslint/no-unsafe-return': 'warn',
+    "@typescript-eslint/no-use-before-define": "error",
 
-        '@typescript-eslint/no-unused-expressions': 'error',
+    "@typescript-eslint/no-var-requires": "warn",
 
-        '@typescript-eslint/no-unused-vars': 'error',
+    "@typescript-eslint/prefer-includes": "warn",
 
-        '@typescript-eslint/no-use-before-define': 'error',
+    "@typescript-eslint/prefer-regexp-exec": "off",
 
-        '@typescript-eslint/no-var-requires': 'warn',
+    "@typescript-eslint/restrict-template-expressions": "warn",
 
-        '@typescript-eslint/prefer-includes': 'warn',
+    "@typescript-eslint/triple-slash-reference": "off",
 
-        '@typescript-eslint/prefer-regexp-exec': 'off',
+    "@typescript-eslint/unbound-method": "warn",
 
-        '@typescript-eslint/restrict-template-expressions': 'warn',
+    "array-callback-return": "warn",
 
-        '@typescript-eslint/triple-slash-reference': 'off',
+    "arrow-body-style": "error",
 
-        '@typescript-eslint/unbound-method': 'warn',
+    "consistent-return": "warn",
 
-        'array-callback-return': 'warn',
+    "cypress/assertion-before-screenshot": "warn",
 
-        'arrow-body-style': 'error',
+    "cypress/no-assigning-return-values": "error",
 
-        'consistent-return': 'warn',
+    "cypress/no-async-tests": "error",
 
-        'cypress/assertion-before-screenshot': 'warn',
+    "cypress/no-force": "error",
 
-        'cypress/no-assigning-return-values': 'error',
+    "cypress/no-unnecessary-waiting": "error",
 
-        'cypress/no-async-tests': 'error',
+    "default-case": "warn",
 
-        'cypress/no-force': 'error',
+    "dot-notation": "warn",
 
-        'cypress/no-unnecessary-waiting': 'error',
+    "guard-for-in": "warn",
 
-        'default-case': 'warn',
+    "import/export": "warn",
 
-        'dot-notation': 'warn',
+    "import/extensions": "off",
 
-        'guard-for-in': 'warn',
+    "import/first": "warn",
 
-        'import/export': 'warn',
+    "import/named": "warn",
 
-        'import/extensions': 'off',
+    "import/newline-after-import": "warn",
 
-        'import/first': 'warn',
+    "import/no-cycle": "warn",
 
-        'import/named': 'warn',
+    "import/no-duplicates": "error",
 
-        'import/newline-after-import': 'warn',
+    "import/no-extraneous-dependencies": [
+      "warn",
+      {
+        bundledDependencies: false,
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
 
-        'import/no-cycle': 'warn',
+    "import/no-named-as-default": "warn",
 
-        'import/no-duplicates': 'error',
+    "import/no-unresolved": "warn",
 
-        'import/no-extraneous-dependencies': [
-            'warn',
-            {
-                bundledDependencies: false,
-                devDependencies: true,
-                optionalDependencies: false,
-                peerDependencies: false,
-            },
-        ],
+    "import/no-useless-path-segments": "warn",
 
-        'import/no-named-as-default': 'warn',
-
-        'import/no-unresolved': 'warn',
-
-        'import/no-useless-path-segments': 'warn',
-
-        'import/order': [
-            'error',
-            {
-                alphabetize: {
-                    order: 'asc',
-                },
-                groups: ['builtin', 'external', 'internal'],
-                'newlines-between': 'always',
-            },
-        ],
-
-        'import/prefer-default-export': 'off',
-
-        'jsdoc/require-description': 'warn',
-
-        // disabling this rule because Cypress subtypes, such as Cypress.Chainable, are not found
-        'jsdoc/no-undefined-types': 'off',
-
-        'lines-between-class-members': 'off',
-
-        'no-case-declarations': 'off',
-
-        'no-console': 'warn',
-
-        'no-else-return': 'warn',
-
-        'no-extra-boolean-cast': 'warn',
-
-        'no-lonely-if': 'warn',
-        'no-multi-str': 'warn',
-        'no-nested-ternary': 'warn',
-        'no-param-reassign': 'warn',
-        'no-plusplus': 'warn',
-        'no-prototype-builtins': 'warn',
-
-        'no-restricted-syntax': 'warn',
-        'no-sequences': 'warn',
-        'no-shadow': 'error',
-        'no-undef-init': 'off',
-        'no-underscore-dangle': 'off',
-        'no-unused-expressions': 'warn',
-        'no-useless-return': 'warn',
-        'object-shorthand': 'warn',
-        'operator-assignment': 'warn',
-        'prefer-const': 'error',
-
-        'prefer-destructuring': 'warn',
-        'prefer-spread': 'warn',
-        'prefer-template': 'warn',
-        'prettier/prettier': 'warn',
-        radix: 'warn',
-
-        'sort-keys-fix/sort-keys-fix': 'warn',
-
-        'spaced-comment': 'warn',
-
-        'class-methods-use-this': 'off',
-    },
-    settings: {
-        'import/resolver': {
-            node: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx'],
-            },
+    "import/order": [
+      "error",
+      {
+        alphabetize: {
+          order: "asc",
         },
-        jsdoc: {
-            mode: 'typescript',
-            preferredTypes: {
-                unknown: 'unknown',
-            },
-            tagNamePreference: {
-                returns: 'return',
-            },
-        },
-        react: {
-            version: 'detect',
-        },
+        groups: ["builtin", "external", "internal"],
+        "newlines-between": "always",
+      },
+    ],
+
+    "import/prefer-default-export": "off",
+
+    "jsdoc/require-description": "warn",
+
+    // disabling this rule because Cypress subtypes, such as Cypress.Chainable, are not found
+    "jsdoc/no-undefined-types": "off",
+
+    "lines-between-class-members": "off",
+
+    "no-case-declarations": "off",
+
+    "no-console": "warn",
+
+    "no-else-return": "warn",
+
+    "no-extra-boolean-cast": "warn",
+
+    "no-lonely-if": "warn",
+    "no-multi-str": "warn",
+    "no-nested-ternary": "warn",
+    "no-param-reassign": "warn",
+    "no-plusplus": "warn",
+    "no-prototype-builtins": "warn",
+
+    "no-restricted-syntax": "warn",
+    "no-sequences": "warn",
+    "no-shadow": "error",
+    "no-undef-init": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "warn",
+    "no-useless-return": "warn",
+    "object-shorthand": "warn",
+    "operator-assignment": "warn",
+    "prefer-const": "error",
+
+    "prefer-destructuring": "warn",
+    "prefer-spread": "warn",
+    "prefer-template": "warn",
+    "prettier/prettier": "warn",
+    radix: "warn",
+
+    "sort-keys-fix/sort-keys-fix": "warn",
+
+    "spaced-comment": "warn",
+
+    "class-methods-use-this": "off",
+  },
+  settings: {
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
     },
+    jsdoc: {
+      mode: "typescript",
+      preferredTypes: {
+        unknown: "unknown",
+      },
+      tagNamePreference: {
+        returns: "return",
+      },
+    },
+    react: {
+      version: "detect",
+    },
+  },
 };
