@@ -20,6 +20,9 @@ import './leftPanel/commands';
 import './common/commands';
 import './categories/forms/commands';
 import 'cypress-wait-until';
+import { addFailureScreenshotsToContext } from 'reporters/utils';
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+Cypress.on('test:after:run', (test, runnable) => {
+    // eslint-disable-next-line no-undef
+    addFailureScreenshotsToContext(test as Mocha.Runnable, runnable);
+});

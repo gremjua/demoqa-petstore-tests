@@ -16,5 +16,6 @@ describe('forms category', () => {
             .fillInRegistrationForm(studentData)
             .parseSubmittedData()
             .should('deep.include', studentData);
+        cy.wrap(true).should('equal', false);
     });
 });

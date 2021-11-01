@@ -17,3 +17,5 @@ workflows:
                       - run: npx marge cypress/reports/output.json --reportDir cypress/reports/mocha/output --inline
                       - store_artifacts:
                             path: cypress/reports/mocha/output
+                      - store_test_results:
+                            path: cypress/reports/junit
