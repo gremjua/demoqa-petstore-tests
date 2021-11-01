@@ -6,11 +6,11 @@
     "scripts": {
         "test": "cypress run",
         "cy:open": "cypress open",
-        "eslint": "eslint . --max-warnings=1 --ext .js,.jsx,.ts,.tsx --fix",
+        "eslint": "eslint . --max-warnings=0 --ext .js,.jsx,.ts,.tsx --fix",
         "prettier": "prettier --write .",
         "ts-check": "./node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
         "prepare": "husky install",
-        "docs": "typedoc src --options typedoc.json"
+        "docs": "typedoc --options typedoc.json"
     },
     "repository": {
         "type": "git",
@@ -28,12 +28,13 @@
     },
     "homepage": "https://github.com/gremjua/demoqa-petstore-tests#readme",
     "lint-staged": {
-        "*.{js,jsx,ts,tsx}": "npm run eslint",
+        "*.{js,jsx,ts,tsx}": "eslint --max-warnings=0 --fix",
         "*.{c,sc}ss": "stylelint",
         "**/*": "prettier --write --ignore-unknown"
     },
     "dependencies": {
-        "cypress": "^8.7.0"
+        "cypress": "^8.7.0",
+        "cypress-wait-until": "^1.7.2"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "4.32.0",
@@ -41,6 +42,7 @@
         "eslint": "7.32.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-config-prettier": "^8.3.0",
+        "eslint-import-resolver-typescript": "^2.5.0",
         "eslint-plugin-cypress": "^2.12.1",
         "eslint-plugin-import": "^2.25.2",
         "eslint-plugin-jsdoc": "^37.0.3",
@@ -49,8 +51,8 @@
         "husky": "^7.0.4",
         "lint-staged": "^11.2.6",
         "prettier": "^2.4.1",
-        "typedoc": "^0.22.7",
-        "typedoc-plugin-markdown": "^3.11.3",
-        "typescript": "^4.4.4"
+        "typedoc": "0.21.9",
+        "typedoc-plugin-markdown": "3.10.4",
+        "typescript": "4.4.3"
     }
 }

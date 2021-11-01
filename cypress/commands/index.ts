@@ -19,6 +19,7 @@ import './categories/commands';
 import './leftPanel/commands';
 import './common/commands';
 import './categories/forms/commands';
+import 'cypress-wait-until';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
