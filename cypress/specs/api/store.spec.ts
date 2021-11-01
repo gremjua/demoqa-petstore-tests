@@ -2,7 +2,7 @@ import store from 'clients/store/client';
 import { Order } from 'clients/store/types';
 import { ApiResponse } from 'clients/types';
 
-describe('store', { baseUrl: 'https://petstore.swagger.io/v2' }, () => {
+describe('store api', { baseUrl: 'https://petstore.swagger.io/v2' }, () => {
     it('should be able to place and delete an order', () => {
         const timestamp = Date.now();
         const status: Order['status'] = 'delivered';

@@ -1,7 +1,7 @@
 import user from 'clients/user/client';
 import { UserData } from 'clients/user/types';
 
-describe('user', { baseUrl: 'https://petstore.swagger.io/v2' }, () => {
+describe('user api', { baseUrl: 'https://petstore.swagger.io/v2' }, () => {
     it('should be able to create, read, update and delete', () => {
         const timestamp = Date.now();
         const userData: UserData = {
@@ -17,14 +17,16 @@ describe('user', { baseUrl: 'https://petstore.swagger.io/v2' }, () => {
         const updatedLastName = 'UPDATEDlastName';
         user.create(userData).then((response) => {
             expect(response.status).to.equal(200);
-            expect(response.body.code).to.equal(200);
         });
-        cy.waitUntil<Cypress.Chainable<boolean>>(
-            // wait for the user to be stored in the data base
+        cy.waitUntil(
             () =>
-                user
-                    .get(userData.username)
-                    .then((response) => response.status === 200 && (response.body as UserData).id === userData.id),
+                user.get(userData.username).then((response) => {
+                    if (response.status === 200) {
+                        expect(response.body).to.deep.equal(userData);
+                        return true;
+                    }
+                    return false;
+                }),
             {
                 errorMsg: 'User has not been stored in the data base yet.',
                 interval: 1000,
@@ -35,7 +37,6 @@ describe('user', { baseUrl: 'https://petstore.swagger.io/v2' }, () => {
             expect(response.status).to.equal(200);
         });
         cy.waitUntil(
-            // wait for the user to be stored in the data base
             () =>
                 user
                     .get(userData.username)
@@ -53,14 +54,10 @@ describe('user', { baseUrl: 'https://petstore.swagger.io/v2' }, () => {
             expect(response.status).to.equal(200);
         });
 
-        cy.waitUntil(
-            // wait for the user to be stored in the data base
-            () => user.get(userData.username).then((response) => response.status === 404),
-            {
-                errorMsg: 'User has not been deleted correctly.',
-                interval: 1000,
-                timeout: 5000,
-            }
-        );
+        cy.waitUntil(() => user.get(userData.username).then((response) => response.status === 404), {
+            errorMsg: 'User has not been deleted correctly.',
+            interval: 1000,
+            timeout: 5000,
+        });
     });
 });
