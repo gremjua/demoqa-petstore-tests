@@ -3,7 +3,7 @@ import { Inventory, Order } from './types';
 
 const store = {
     deleteOrder: (orderId: Order['id']): Cypress.Chainable<Cypress.Response<ApiResponse | Order>> =>
-        cy.request({ method: 'DELETE', url: `/store/order/${orderId}` }),
+        cy.request({ failOnStatusCode: false, method: 'DELETE', url: `/store/order/${orderId}` }),
     getInventory: (): Cypress.Chainable<Cypress.Response<ApiResponse | Inventory>> =>
         cy.request({ method: 'GET', url: '/store/inventory' }),
     getOrder: (orderId: Order['id']): Cypress.Chainable<Cypress.Response<ApiResponse | Order>> =>
