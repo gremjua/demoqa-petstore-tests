@@ -4,11 +4,13 @@
     "description": "DemoQa and PetStore Automated Tests",
     "main": "index.js",
     "scripts": {
-        "test": "test",
+        "test": "cypress run",
+        "cy:open": "cypress open",
         "eslint": "eslint . --max-warnings=1 --ext .js,.jsx,.ts,.tsx --fix",
         "prettier": "prettier --write .",
         "ts-check": "./node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "docs": "typedoc src --options typedoc.json"
     },
     "repository": {
         "type": "git",

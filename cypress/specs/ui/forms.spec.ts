@@ -1,4 +1,4 @@
-import { StudentData } from '../../support/categories/forms/types';
+import { StudentData } from '../../commands/categories/forms/types';
 
 describe('forms category', () => {
     const studentData: StudentData = {
