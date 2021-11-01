@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "test",
-        "eslint": "eslint . --max-warnings=0 --ext .js,.jsx,.ts,.tsx --ignore-pattern '!.eslintrc.js'",
+        "eslint": "eslint cypress --max-warnings=0 --ext .js,.jsx,.ts,.tsx",
         "prettier": "prettier --write .",
         "ts-check": "./node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
         "prepare": "husky install"

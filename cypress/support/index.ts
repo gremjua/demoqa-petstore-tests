@@ -15,6 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands';
+import './categories/commands';
+import './leftPanel/commands';
+import './common/commands';
+import './categories/forms/commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

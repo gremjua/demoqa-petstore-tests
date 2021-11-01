@@ -1,4 +1,5 @@
 {
     "testFiles": "**/*.spec.ts",
-    "integrationFolder": "cypress/specs"
+    "integrationFolder": "cypress/specs",
+    "baseUrl": "https://demoqa.com/"
 }

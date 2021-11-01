@@ -26,7 +26,7 @@ module.exports = {
         // these are things injected using webpack define plugin
         process: false,
     },
-    ignorePatterns: ['node_modules/', 'docs'],
+    ignorePatterns: ['node_modules/', 'docs', '.eslintrc.js'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 11,
