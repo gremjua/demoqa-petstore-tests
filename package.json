@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "cypress run",
+        "test-full": "cypress run --browser=chrome --headless --reporter cypress-multi-reporters --reporter-options configFile=cypress/reporters/reporterOpts.json",
         "cy:open": "cypress open",
         "eslint": "eslint . --max-warnings=0 --ext .js,.jsx,.ts,.tsx --fix",
         "prettier": "prettier --write .",
@@ -39,6 +40,7 @@
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "4.32.0",
         "@typescript-eslint/parser": "4.32.0",
+        "cypress-multi-reporters": "^1.5.0",
         "eslint": "7.32.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-config-prettier": "^8.3.0",
@@ -50,6 +52,9 @@
         "eslint-plugin-sort-keys-fix": "^1.1.2",
         "husky": "^7.0.4",
         "lint-staged": "^11.2.6",
+        "mochawesome": "^6.3.1",
+        "mochawesome-merge": "^4.2.0",
+        "mochawesome-report-generator": "^5.2.0",
         "prettier": "^2.4.1",
         "typedoc": "0.21.9",
         "typedoc-plugin-markdown": "3.10.4",

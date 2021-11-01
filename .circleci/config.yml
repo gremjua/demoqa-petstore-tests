@@ -1,7 +1,14 @@
 version: 2.1
 orbs:
-    cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@1
 workflows:
-    build:
-        jobs:
-            - cypress/run
+  build:
+    jobs:
+      - cypress/run:
+          command: npm run test-full
+          store_artifacts: true
+          post-steps:
+            - run: npx mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/output.json
+            - run: npx marge cypress/reports/output.json --reportDir cypress/reports/mocha/output --inline
+            - store_artifacts:
+                path: cypress/reports/mocha/output

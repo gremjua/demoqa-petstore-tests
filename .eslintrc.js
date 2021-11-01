@@ -202,7 +202,7 @@ module.exports = {
             node: {
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
             },
-            typescript: {}
+            typescript: {},
         },
         jsdoc: {
             mode: 'typescript',

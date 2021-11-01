@@ -1,4 +1,5 @@
 # DemoQA and PetStore Automated Tests
+
 Web e2e automated tests for [demoqa.com](https://demoqa.com/).
 API e2e automated tests for [petstore.swagger.io](https://petstore.swagger.io/#/).
 
@@ -23,6 +24,7 @@ After analyzing the system under test, it was concluded that test scenarios invo
 Only the happy paths were added at first, but similar tests can be written to check for negative cases.
 
 #### Bugs Found
+
 In demoqa.com/forms, when erasing the date of birth field, the page will fail to compute the date and go blank.
 
 ### API Tests - PetStore

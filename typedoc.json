@@ -1,6 +1,4 @@
 {
-    "entryPoints": [
-        "./cypress/commands/index.ts"
-    ],
+    "entryPoints": ["./cypress/commands/index.ts"],
     "out": "doc"
 }
