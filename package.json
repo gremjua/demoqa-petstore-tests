@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "cypress run",
-        "test-full": "cypress run --browser=chrome --headless --reporter cypress-multi-reporters --reporter-options configFile=cypress/reporters/reporterOpts.json",
+        "test-full": "cypress run --browser chrome --headless --reporter cypress-multi-reporters --reporter-options configFile=cypress/reporters/reporterOpts.json",
         "cy:open": "cypress open",
         "eslint": "eslint . --max-warnings=0 --ext .js,.jsx,.ts,.tsx --fix",
         "prettier": "prettier --write .",
