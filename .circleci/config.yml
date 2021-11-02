@@ -23,7 +23,9 @@ workflows:
                             when: always
                       - run:
                             name: Upload to Calliope
-                            command: bash -c "$CALLIOPE_CURL"
+                            command: |
+                                curl='curl -X POST "https://app.calliope.pro/api/v2/profile/${CALLIOPE_PROFILE_ID}/import/mochawesome" -H "x-api-key:${CALLIOPE_API_KEY}" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file[]=@cypress/reports/output.json;type=application/json" -F "envelope=false" -F "smart=true"'
+                                eval $curl
                             when: always
                       - store_artifacts:
                             path: cypress/reports/mocha/output
