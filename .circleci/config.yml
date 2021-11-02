@@ -19,7 +19,7 @@ workflows:
                             when: always
                       - run:
                             name: Generate HTML Report
-                            command: npm report-html
+                            command: npm run report-html
                             when: always
                       - run:
                             name: Upload to Calliope
