@@ -3,7 +3,7 @@
 Web e2e automated tests for [demoqa.com](https://demoqa.com/).
 API e2e automated tests for [petstore.swagger.io](https://petstore.swagger.io/#/).
 
-Cypress was selected as the main tool for the framework due to its execution speed, simple use, and easiness in debugging. Different plugins provide support for diverse types of tests that could be done in addition to the current ones: visual testing, contract testing, UI performance testing, among others.
+Cypress was selected as the main tool for the framework due to its execution speed, simple use, and easiness in debugging. Different plugins provide support for diverse types of tests that could be done in addition to the current ones: visual testing, contract testing, UI performance testing, among others. Adding text to run a test.
 
 ## First Time Set-Up
 
