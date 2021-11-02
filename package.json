@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "cypress run",
-        "pretest-full": "rm -r cypress/reports",
+        "pretest-full": "rm -r -f cypress/reports",
         "test-full": "cypress run --browser chrome --headless --reporter cypress-multi-reporters --reporter-options configFile=cypress/reporters/reporterOpts.json",
         "test-open": "cypress open",
         "report-merge": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/output.json",

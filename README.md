@@ -34,7 +34,7 @@ This will run all tests in a headless chrome browser and generate raw junit and 
 
 ### In CI/CD
 
-The project is set up to run tests in a CircleCI job on every commit to the `main` branch. The configuration is currently set up to run all tests, generate and archive artifacts, and publish a mochawesome report to [Calliope.pro](calliope.pro). Look at [.circleci/config.yml](.circleci/config.yml) for more information.
+The project is set up to run tests in a CircleCI job on every commit pushed. The configuration is currently set up to run all tests, generate and archive artifacts, and publish a mochawesome report to [Calliope.pro](calliope.pro). Look at [.circleci/config.yml](.circleci/config.yml) for more information.
 
 You can review test jobs and run them in the project's [CircleCI dashboard](https://app.circleci.com/pipelines/github/gremjua/demoqa-petstore-tests).
 
