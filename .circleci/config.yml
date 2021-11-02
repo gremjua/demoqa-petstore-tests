@@ -15,11 +15,11 @@ workflows:
                   post-steps:
                       - run:
                             name: Merge Reports
-                            command: npx mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/output.json
+                            command: npm run report-merge
                             when: always
                       - run:
                             name: Generate HTML Report
-                            command: npx marge cypress/reports/output.json --reportDir cypress/reports/mocha/output --inline
+                            command: npm report-html
                             when: always
                       - run:
                             name: Upload to Calliope

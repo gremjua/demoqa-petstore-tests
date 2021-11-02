@@ -5,8 +5,11 @@
     "main": "index.js",
     "scripts": {
         "test": "cypress run",
+        "pretest-full": "rm -r cypress/reports",
         "test-full": "cypress run --browser chrome --headless --reporter cypress-multi-reporters --reporter-options configFile=cypress/reporters/reporterOpts.json",
-        "cy:open": "cypress open",
+        "test-open": "cypress open",
+        "report-merge": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/output.json",
+        "report-html": "marge cypress/reports/output.json --reportDir cypress/reports/mocha/output --inline",
         "eslint": "eslint . --max-warnings=0 --ext .js,.jsx,.ts,.tsx --fix",
         "prettier": "prettier --write .",
         "ts-check": "./node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
