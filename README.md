@@ -90,6 +90,7 @@ For the API test scenarios, the focus was given to the CRUD operations of the di
 ## Next Steps
 
 1. To make tests easier to run and more portable, add a Dockerfile based on a Cypress docker image, which will contain everything needed to execute tests. This will also make it easier for tests to run in other CI/CD tools such as Jenkins.
+1. Add a CircleCI cron job that executes UI tests using Firefox and Edge on a nightly basis.
 1. Fix typedoc to generate Markdown files with documentation of the testing commands used and the existing tests on every commit.
 1. Add UI performance tests using a Google lighthouse Cypress plugin such as [cypress-audit](https://www.npmjs.com/package/cypress-audit).
 1. Add contract tests using a Cypress plugin such as [cypress-swagger-validation](https://github.com/jc21/cypress-swagger-validation).
