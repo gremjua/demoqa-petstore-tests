@@ -32,7 +32,7 @@ export const addFailureScreenshotsToContext = (test: Mocha.Runnable, runnable: M
 
         const fullTestName = nameParts.filter(Boolean).join(' -- '); // this is how cypress joins the test title fragments
 
-        const imageUrl = `screenshots/${Cypress.spec.name}/${fullTestName} (failed).png`;
+        const imageUrl = `../../../screenshots/${Cypress.spec.name}/${fullTestName} (failed).png`;
 
         const ctx = new Mocha.Context();
         ctx.test = test;

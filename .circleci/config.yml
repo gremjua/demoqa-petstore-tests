@@ -13,8 +13,18 @@ workflows:
                   command: npm run test-full
                   store_artifacts: true
                   post-steps:
-                      - run: npx mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/output.json
-                      - run: npx marge cypress/reports/output.json --reportDir cypress/reports/mocha/output --inline
+                      - run:
+                            name: Merge Reports
+                            command: npx mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/output.json
+                            when: always
+                      - run:
+                            name: Generate HTML Report
+                            command: npx marge cypress/reports/output.json --reportDir cypress/reports/mocha/output --inline
+                            when: always
+                      - run:
+                            name: Upload to Calliope
+                            command: bash -c "$CALLIOPE_CURL"
+                            when: always
                       - store_artifacts:
                             path: cypress/reports/mocha/output
                       - store_test_results:
